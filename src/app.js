@@ -27,3 +27,13 @@ export function sumar(a,b) {
 export function restar(a,b) {
     return a-b;
 }
+
+// Función: Estado de salud del sistema (health check)
+export function healthCheck() {
+  return {
+    status: 'ok',
+    timestamp: new Date().toISOString(),
+    servicio: 'StreamFlow API',
+    version: '1.0.0'
+  };
+}
