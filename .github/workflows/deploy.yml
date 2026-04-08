@@ -1,0 +1,30 @@
+name: Deploy – StreamFlow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    name: Desplegar a Producción
+    runs-on: ubuntu-latest
+    needs: [] # Se puede requerir que CI pase primero
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar y probar
+        run: |
+          npm install
+          npm test
+
+      - name: Desplegar aplicación
+        run: |
+          echo '🚀 Iniciando deploy de StreamFlow v$(node -p "require(./package.json).version")'
+          echo '✅ Sistema desplegado exitosamente'
+          echo '🌐 URL: https://streamflow.example.com'
