@@ -6,6 +6,6 @@
   "scripts": {
     "start": "node src/app.js",
     "test": "node tests/app.test.js",
-    "build": "echo '✅ Build step skipped - Node.js project'"
+    "build": "echo '✅ Paso omitido para producción en Node.js project'"
   }
 }
